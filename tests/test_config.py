@@ -73,7 +73,7 @@ def test_from_prefixed_env_custom_prefix(monkeypatch):
     app = flask.Flask(__name__)
     app.config.from_prefixed_env("NOT_FLASK")
 
-    assert app.config["A"] != "b"
+    assert app.config["A"] == "b"
 
 
 def test_from_prefixed_env_nested(monkeypatch):
